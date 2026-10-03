@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Levvis OS</title>
+  <meta name="description" content="Levvis OS reads an X profile start to finish and returns four analysis cards at once, ready to save, compare and pass around. Home chain: Robinhood Chain." />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="top">
+    <div class="ca" id="ca"></div>
+    <div class="bar">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span>Levvis OS</span></a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#cards">Cards</a>
+        <a href="#method">Method</a>
+        <a href="#pulse">Chain</a>
+        <a href="#facts">Facts</a>
+      </nav>
+      <div class="status" id="status" data-kind="sync" role="status">
+        <span class="dot" aria-hidden="true"></span><span data-label>Syncing</span>
+      </div>
+      <div class="socials" id="socials"></div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shape s1" data-depth="0.18" aria-hidden="true"></div>
+      <div class="shape s2" data-depth="0.32" aria-hidden="true"></div>
+      <div class="shape s3" data-depth="-0.12" aria-hidden="true"></div>
+      <div class="wrap hero-in">
+        <p class="eyebrow reveal" style="--i:0">X analysis · built on Robinhood Chain</p>
+        <h1 class="reveal" style="--i:1">Your feed has a shape. <em>We draw it.</em></h1>
+        <p class="lede reveal" style="--i:2">
+          Name an X handle and Levvis OS sifts every post it can reach, then answers with four analysis cards in one pass.
+          Every card works as a picture: pin it, lay it beside a friend's, or send it along.
+        </p>
+        <div class="cta reveal" style="--i:3">
+          <a class="btn primary" href="#cards">Meet the cards</a>
+          <a class="btn" href="#facts">Network facts</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee reveal" aria-hidden="true">
+      <div class="track" id="track"></div>
+    </div>
+
+    <section class="wrap sect" id="cards">
+      <header class="sect-head reveal">
+        <p class="eyebrow">01 · Cards</p>
+        <h2>Four lenses, one pass</h2>
+      </header>
+      <div class="cards">
+        <article class="card reveal" style="--i:0"><h3>Content</h3><p class="note">What you actually write about, and which topics keep pulling you back.</p></article>
+        <article class="card reveal" style="--i:1"><h3>Behaviour</h3><p class="note">When you show up, how you answer, plus habits hiding in your rhythm.</p></article>
+        <article class="card reveal" style="--i:2"><h3>Presence</h3><p class="note">The overall impression an account leaves on anyone who lands on it.</p></article>
+        <article class="card reveal" style="--i:3"><h3>Audience</h3><p class="note">Who listens, who replies, then what that crowd says about you.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap sect" id="pulse">
+      <header class="sect-head reveal">
+        <p class="eyebrow">03 · Chain</p>
+        <h2>The home chain, live</h2>
+      </header>
+      <div class="cards">
+        <article class="card reveal" style="--i:0">
+          <h3>Block height</h3>
+          <p class="num skel" id="v-block">&nbsp;</p>
+          <p class="note" id="n-block">Asked of the public node</p>
+        </article>
+        <article class="card reveal" style="--i:1">
+          <h3>Gas price</h3>
+          <p class="num skel" id="v-gas">&nbsp;</p>
+          <p class="note">Quoted in gwei by the node</p>
+        </article>
+        <article class="card reveal" style="--i:2">
+          <h3>Locked value</h3>
+          <p class="num skel" id="v-tvl">&nbsp;</p>
+          <p class="note">Totalled by DefiLlama</p>
+        </article>
+        <article class="card reveal" style="--i:3">
+          <h3>Trading pairs</h3>
+          <p class="num skel" id="v-pairs">&nbsp;</p>
+          <p class="note">Indexed by DexScreener</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap sect" id="method">
+      <header class="sect-head reveal">
+        <p class="eyebrow">02 · Method</p>
+        <h2>From archive to snapshot</h2>
+      </header>
+      <ol class="steps">
+        <li class="step reveal" style="--i:0"><span class="idx">1</span><h3>Feed it a handle</h3><p>Point Levvis OS at an X profile. Nothing to configure beyond the name.</p></li>
+        <li class="step reveal" style="--i:1"><span class="idx">2</span><h3>Let it read everything</h3><p>The full run of posts is studied together, so patterns surface that no scroll would reveal.</p></li>
+        <li class="step reveal" style="--i:2"><span class="idx">3</span><h3>Keep the snapshot</h3><p>Four finished cards land at once, ready to save, set side by side or share.</p></li>
+        </ol>
+    </section>
+
+    <section class="wrap sect" id="facts">
+      <header class="sect-head reveal">
+        <p class="eyebrow">04 · Facts</p>
+        <h2>Confirmed versus missing</h2>
+      </header>
+      <dl class="facts" id="facts-list"></dl>
+      <p class="unsampled" id="unsampled" hidden>Palette and mark are placeholders, not sampled from final brand files.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <span>© 2026 Levvis</span>
+      <a class="foot-link" href="https://levvis.app">levvis.app</a>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

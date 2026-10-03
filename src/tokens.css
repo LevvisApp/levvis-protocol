@@ -1,0 +1,53 @@
+/* The only file in the project allowed to hold colour literals.
+
+   PALETTE PROVENANCE (sampled from brand/ and reference/, 2026-10-03)
+   Method: k-means (scikit-learn, random_state 1-3) on a 7px pixel grid of each source,
+   then every centre snapped to the nearest REAL pixel; (x,y) is that pixel's coordinate.
+   brand/LOGO LEVVISOS PNG.png (2000x2000 RGBA, colour type 6):
+     --c-brand   #f340c0  (0,0)        93.8% of pixels
+     --c-ink     #16070c  (875,763)     5.0%
+     --c-plum    #6d2251  (875,1512)    1.3%  (stroke edge)
+   reference/LEVVISOS 1.jpg (slide):
+     --c-cream   #ffdbfb  (756,518)     1.0%  (body text on the slide)
+   reference/SAMPUL LEVVISOS JPG.jpg (cover):
+     --c-pink    #ea99d1  (322,196)    36.5%
+     --c-sky     #99d0e4  (644,336)    33.4%
+     --c-blush   #f6c7d7  (1358,56)    22.6%
+     --c-lilac   #c3b6e2  (399,14)      6.1%
+   Derived tokens below are color-mix() of the sampled ones, never new literals.
+   Note: the transparent logo variant holds pure-black RGB under alpha 0; any resize of it is premultiplied. */
+:root {
+  color-scheme: light;
+
+  --c-brand: #f340c0;
+  --c-ink: #16070c;
+  --c-plum: #6d2251;
+  --c-cream: #ffdbfb;
+  --c-pink: #ea99d1;
+  --c-sky: #99d0e4;
+  --c-blush: #f6c7d7;
+  --c-lilac: #c3b6e2;
+
+  --c-bg: var(--c-brand);
+  --c-surface: var(--c-blush);
+  --c-surface-hi: var(--c-cream);
+  --c-line: color-mix(in srgb, var(--c-ink) 45%, transparent);
+  --c-line-soft: color-mix(in srgb, var(--c-ink) 22%, transparent);
+  --c-text: var(--c-ink);
+  --c-mute: color-mix(in srgb, var(--c-ink) 86%, var(--c-brand));
+  --c-dim: color-mix(in srgb, var(--c-ink) 80%, var(--c-brand));
+  --c-accent: var(--c-ink);
+  --c-on-accent: var(--c-cream);
+  --c-live: var(--c-sky);
+  --c-flash: color-mix(in srgb, var(--c-sky) 75%, transparent);
+  --c-shadow: color-mix(in srgb, var(--c-ink) 45%, transparent);
+  --c-skel-a: color-mix(in srgb, var(--c-ink) 8%, var(--c-blush));
+  --c-skel-b: color-mix(in srgb, var(--c-ink) 18%, var(--c-blush));
+
+  --ease: cubic-bezier(0.12, 0.23, 0.5, 1);
+  --ease-pop: cubic-bezier(0.3, 1.5, 0.5, 1);
+  --t-fast: 0.12s;
+  --t-std: 0.24s;
+  --t-slow: 0.32s;
+  --t-reveal: 0.7s;
+}
